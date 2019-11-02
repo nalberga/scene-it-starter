@@ -31,11 +31,11 @@ function saveToWatchlist(imdbID) {
   });
 
  
-  var watchlistJSON = localStorage.getItem('watchlist');
+  var watchlistJSON = localStorage.getItem('watchlist');               
 
   var watchlist = JSON.parse(watchlistJSON);
 
-  if (watchlist == null) {
+  if (watchlist == null) {    
   
       watchlist = [];
   }
@@ -63,6 +63,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
       axios.get('http://www.omdbapi.com/?apikey=3430a78&s='+urlEncodedSearchString)
         .then(function (response) {
+         
            movieData = response.data.Search
 
            var results = document.getElementsByClassName('results')[0];
